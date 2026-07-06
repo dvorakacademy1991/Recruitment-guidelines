@@ -259,12 +259,11 @@ h1,h2,h3{
 
 /* audition */
 .audition-note{
-
   color:#4a4038;
 }
 .audition-note strong{color:var(--rust); font-style:normal;}
 
-/* contact / seal */
+/* ---------- CONTACT / SEAL (문의 섹션: 로고 - 텍스트 - 버튼 3분할 가로 배치) ---------- */
 .contact-block{
   display:flex;
   align-items:center;
@@ -275,10 +274,14 @@ h1,h2,h3{
   flex:0 0 auto;
   width:200px; height:200px;
 }
-.contact-lines p{margin:4px 0;}
-.contact-lines a.cta{
+.contact-text{
+  flex:1 1 auto;
+  min-width:180px;
+}
+.contact-text p{margin:4px 0;}
+.contact-block a.cta{
+  flex:0 0 auto;
   display:inline-block;
-  margin-top:14px;
   padding:12px 28px;
   border:1px solid var(--rust);
   color:var(--rust);
@@ -287,9 +290,10 @@ h1,h2,h3{
   letter-spacing:0.14em;
   font-size:0.95rem;
   border-radius:2px;
+  white-space:nowrap;
   transition:background .25s ease, color .25s ease;
 }
-.contact-lines a.cta:hover{
+.contact-block a.cta:hover{
   background:var(--rust);
   color:var(--parchment);
 }
@@ -321,7 +325,8 @@ footer{
   .field-row{grid-template-columns:1fr;}
   .period-card{flex-direction:column; align-items:flex-start;}
   .period-card .place{text-align:left;}
-  .seal[style]{width:110px; height:110px;}
+  .contact-block{flex-direction:column; align-items:flex-start;}
+  .seal{width:120px; height:120px;}
 }
 </style>
 </head>
@@ -347,8 +352,6 @@ footer{
     <p class="lede">예술의 본질을 숭상하고 순수정통음악을 계승·발전시켜 나아갈<br>인재들을 발굴·육성하고 있습니다.<br>아래와 같이 2026년 3학기 신입생을 모집합니다.</p>
   </div>
 </section>
-
-<!-- STAFF DIVIDER TEMPLATE FUNCTION VIA REPEATED SVG -->
 
 <main>
 
@@ -466,6 +469,12 @@ footer{
     </div>
   </section>
 
+  <!-- VI. 문의 -->
+  <div class="staff-divider"><svg viewBox="0 0 880 64" preserveAspectRatio="none">
+    <line x1="0" y1="14" x2="880" y2="14"/><line x1="0" y1="24" x2="880" y2="24"/><line x1="0" y1="34" x2="880" y2="34"/><line x1="0" y1="44" x2="880" y2="44"/><line x1="0" y1="54" x2="880" y2="54"/>
+    <circle class="note" cx="40" cy="24" r="6"/>
+  </svg></div>
+
   <section class="folio reveal">
     <div class="wrap">
       <div class="folio-head">
@@ -476,11 +485,11 @@ footer{
         <div class="seal">
           <img src="드보르작 아카데미 로고.png" alt="DVOŘÁK ACADEMIE 로고" style="width:100%; height:100%; object-fit:contain;">
         </div>
-        <div class="contact-lines">
+        <div class="contact-text">
           <p>전화 · 02-587-9278</p>
           <p>홈페이지 · dvorakacademy.com</p>
-          <a class="cta" href="http://dvorakacademy.com" target="_blank" rel="noopener">홈페이지 바로가기</a>
         </div>
+        <a class="cta" href="http://dvorakacademy.com" target="_blank" rel="noopener">홈페이지 바로가기</a>
       </div>
     </div>
   </section>
